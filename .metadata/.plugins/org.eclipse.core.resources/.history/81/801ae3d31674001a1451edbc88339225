@@ -1,0 +1,80 @@
+insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (1, 2500000,'2035-03-29','Jeevan Ankur',100000,'YEARLY');
+    
+    insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (1, 3500000,'2040-05-29','Jeevan Akshay',120000,'YEARLY');
+    
+insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (2, 3500000,'2040-05-29','Jeevan Akshay',120000,'YEARLY');
+    
+insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (3, 1000000,'2040-09-29','Childrens Money Back',25000,'MONTHLY');
+    
+insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (4, 2500000,'2035-03-29','Jeevan Saral',100000,'YEARLY');
+    
+    insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (4, 250000,'2080-03-29','Jeevan Anand' ,2000,'HALF YEARLY');
+    
+     insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (4, 250000,'2080-03-29','Jeevan Anand' ,2000,'HALF YEARLY');
+    
+insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (5, 250000,'2080-03-29','Jeevan Anand' ,2000,'HALF YEARLY');
+    
+    insert into policy_detail (
+        customer_id,
+        maturity_amount,
+        maturity_date,
+        policy_name,
+        premium_amount,
+        premium_frequency
+    ) values (3, 250000,'2080-03-29','Jeevan Anand' ,2000,'HALF YEARLY');

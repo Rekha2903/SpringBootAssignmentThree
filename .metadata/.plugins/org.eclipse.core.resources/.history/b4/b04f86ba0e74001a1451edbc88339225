@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Policy Details</title>
+</head>
+<body>
+<body>
+	<form action="/home" th:object="${policyDetail}" method="GET"></form>
+	
+		<h1 align="center" style = "padding-top: 20px ; padding-bottom: 20px"><i>Safeguard Insurance</i></h1>
+		<h2 align="center">Welcome <td th:text = "${user.username}"></th:text>!!!</td></h2>
+		<h2 align="center">Policy Details</h2>
+		<table align="center">
+		<tr>
+			<th>Customer Id</th>
+			<th>Policy Id</th>
+			<th>Policy Name</th>
+			<th>Premium Frequency</th>
+			<th>Premium Amount</th>
+			<th>Maturity Date</th>
+			<th>Maturity Amount</th>
+		</tr>
+		<tr th:each="p : ${policyDetail.list}" >
+			<td id="tableData" th:text="${p.customerId}"></td>
+			<td id="tableData" th:text="${p.policyId}"></td>
+			<td id="tableData" th:text="${p.policyName}"></td>
+			<td id="tableData" th:text="${p.premiumFrequency}"></td>
+			<td id="tableData" th:text="${p.premiumAmount}"></td>
+			<td id="tableData" th:text="${p.maturityDates}"></td>
+			<td id="tableData" th:text="${p.maturityAmount}"></td>
+			 <td id="tableData" th:hidden="${cust.customerId}">  </td>
+			 <td><a href="PolicyDetail.html" th:href="@{/home/policyDetails/(customerId=${cust.customerId})}">view</a></td>
+			
+		</tr>
+	</table>
+		
+	
+	</body>
+</body>
+</html>

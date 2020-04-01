@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package com.example.assignment3.cms.repo;
+
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * @author Admin
+ * @param <PolicyDetail>
+ *
+ */
+public interface CustomerMgmtSystemRepo extends CrudRepository<PolicyDetail, Integer >{
+
+}

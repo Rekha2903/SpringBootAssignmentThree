@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package com.example.assignment3.model;
+
+/**
+ * @author Admin
+ *
+ */
+public class Policy {
+	
+	private String policyName;
+
+	/**
+	 * Default Constructor
+	 */
+	public Policy() {
+		}
+
+	/**
+	 * @param policyName the policyName to set
+	 */
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+	}
+	
+	/**
+	 * @return the policyName
+	 */
+	public String getPolicyName() {
+		return policyName;
+	}
+
+	/**
+	 * @param policyName
+	 */
+	public Policy(String policyName) {
+		this.policyName = policyName;
+	}
+}

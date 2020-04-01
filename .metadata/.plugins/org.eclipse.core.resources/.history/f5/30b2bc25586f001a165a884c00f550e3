@@ -1,0 +1,70 @@
+/**
+ * 
+ */
+package com.example.assignment3.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.RestTemplate;
+
+import com.example.assignment3.model.User;
+import com.example.assignment3.service.InsuranceAgentService;
+
+/**
+ * @author Admin
+ *
+ */
+@Controller
+public class LoginController {
+	
+	@Autowired
+	private InsuranceAgentService service;
+	
+	@PostMapping("/submit")
+	public String validateUser(@ModelAttribute(name = "user") User user, Model model) {
+		User usr = (User) model.getAttribute("user");
+		if (usr.getUsername().equals("admin") && usr.getPassword().equals("password")) {
+			populateCustomerDetails(usr);
+			return "successful-login";
+		} else
+			return "error";
+	}
+
+	
+	  private void populateCustomerDetails(User user) {
+		  user.setCustomerList(service.getAllCustomers(user.getUsername())); }
+	  
+	  @GetMapping("/home/policyDetails")
+	  private void getPolicyDetails(String customerId) {
+		  System.out.println("Getting Policy details for customer " + customerId);
+	  }
+	  
+	  @GetMapping("/findDepartmentDetails/{id}")
+		public String getDepartmentDetailsById(@PathVariable("id") int id) {
+			/*Employee employee = employeeService.getEmployeeById(id);
+			return new ResponseEntity<Employee>(employee, HttpStatus.OK);*/
+			 System.out.println("Getting Department details for " + id);
+			  
+		        String response = restTemplate.exchange
+		        		("http://department-service/findDepartmentDetails/{departmentid}",
+		           HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
+		  
+		        System.out.println("Response Body " + response);
+		  
+		        return "Department Id -  " + id + " [ Employee Details " + response+" ]";
+		    
+		}
+	  
+	  	 @Bean
+		 @LoadBalanced
+		 public RestTemplate restTemplate() {
+		        return new RestTemplate();
+		    }
+	 
+}

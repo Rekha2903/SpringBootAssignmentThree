@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	>
+<title>Policy Details</title>
+</head>
+<body>
+<body>
+	<form action="/home" th:object="${policyDetail}" method="GET"></form>
+	
+		<h1 align="center" style = "padding-top: 20px ; padding-bottom: 20px"><i>Safeguard Insurance</i></h1>
+		<h2 align="center">Policy Details</h2>
+		<table align="center">
+		<tr>
+			<th>Customer Id</th>
+			<th>Policy Id</th>
+			<th>Policy Name</th>
+			<th>Premium Frequency</th>
+			<th>Premium Amount</th>
+			<th>Maturity Date</th>
+			<th>Maturity Amount</th>
+		</tr>
+		<tr class="clickable text-center"  th:each="p : ${policyDetail.list}">
+			<td id="tableData" th:text="${p.customerId}"></td>
+			<td id="tableData" th:text="${p.policyId}"></td>
+			<td id="tableData" th:text="${p.policyName}"></td>
+			<td id="tableData" th:text="${p.premiumFrequency}"></td>
+			<td id="tableData" th:text="${p.premiumAmount}"></td>
+			<td id="tableData" th:text="${p.maturityDate}"></td>
+			<td id="tableData" th:text="${p.maturityAmount}"></td>
+		</tr>
+	</table>
+	</body>
+</body>
+</html>

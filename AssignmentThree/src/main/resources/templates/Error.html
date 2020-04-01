@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	>
+<title>Error</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style type="text/css" >
+body {
+  background-color: #fefbd8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+		<form action="/error" th:object="${error}" method="GET"></form>
+	</div>
+	
+		<h1 align="center" style = "padding-top: 20px ; padding-bottom: 20px"><i>Safeguard Insurance</i></h1>
+	
+			<table align="center"><tr><td>Invalid user!! Please enter valid credentials. <a href="/login">Click Here to go to Log in Page</a></td></tr></table>
+	
+</html>

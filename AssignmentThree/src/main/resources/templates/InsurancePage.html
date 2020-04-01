@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	>
+<title>Safeguard Insurance</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+
+body {
+  background-color: #fefbd8;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+ <script>
+$(document).ready(function(){
+  $("#products").hover(function(){
+    $("productsImage").show();
+  },
+  function(){
+	  $("productsImage").hide();
+  });
+});
+</script>
+</head>
+
+<body >
+	<h1 align="center" style = "text-decoration: underline"><i>Safeguard Insurance</i></h1>
+
+	<h2 style="padding-top: 10px ; padding-bottom: 10px" align="center">
+		<img
+			src="Banner-05.jpg"
+			align="middle" />
+	</h2>
+
+	<div class="dropdown" align="right" style="padding-left: 725px ">
+		<button class="dropbtn" >Products</button>
+		<div class="dropdown-content">
+			<a href="#">Auto Insurance</a> <a href="#">Home Insurance</a> <a
+				href="#">Business Insurance</a> <a href="#">Life Insurance</a> <a
+				href="#">Health Insurance</a>
+		</div>
+	</div>
+
+	<div class="dropdown" align="center">
+		<button class="dropbtn">Login</button>
+		<div class="dropdown-content">
+			<a href="/login">Agent Login</a> <a href="#">Customer Login</a>
+		</div>
+	</div>
+	<marquee behavior="alternate" direction="up">
+	<marquee direction="right" behavior="alternate">
+	<h2 style="padding-top: 10px ;">
+		<img id="productsImage"
+			src="SafeguardInsurancehomepage.jpg"
+			 />
+	</h2>
+	</marquee>
+	</marquee>
+
+	<div class="container">
+		<form action="/insurance" ></form>
+	</div>
+</body>
+</html>

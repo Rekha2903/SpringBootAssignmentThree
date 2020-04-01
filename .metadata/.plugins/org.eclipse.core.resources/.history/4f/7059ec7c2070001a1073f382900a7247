@@ -1,0 +1,36 @@
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.url=jdbc:h2:~/customerdb
+spring.datasource.username=admin
+spring.datasource.password=password
+server.port=8081
+spring.profiles.active=@spring.profiles.active@
+spring.datasource.tomcat.max-wait=20000
+spring.datasource.tomcat.max-active=50
+spring.datasource.tomcat.max-idle=20
+spring.datasource.tomcat.min-idle=15
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.H2Dialect
+spring.jpa.properties.hibernate.id.new_generator_mappings = false
+spring.jpa.properties.hibernate.format_sql = true
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+#logging.level.org.springframework: DEBUG
+eureka:         
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+spring:    
+  application:
+    name: customerManagementSystem    
+management:
+  security:
+    enabled: false  
+#logging:
+  #level:
+    #com.self.sprintboot.learning.employee: DEBUG

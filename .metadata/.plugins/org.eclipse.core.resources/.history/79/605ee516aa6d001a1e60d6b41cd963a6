@@ -1,0 +1,6 @@
+insert into Customer values("admin","Rekha','Balakrishna",34,"1985-03-29","rekhabalakrishna@gmail.com","Uttarahalli","{Home Insurance","Life Insurance","Health insurance}");
+
+insert into Customer values("admin","Ramya","Balakrishna",36,"1983-05-25","abc@gmail.com","Hesaraghatta","{Home Insurance","Auto Insurance","Health insurance}");
+insert into Customer values("admin","Rashmi","Balakrishna",39,"1980-12-20","def@gmail.com","KS Layout","{Auto Insurance","Life Insurance","Health Insurance}");
+insert into Customer values("admin","Lakki","Modur",39,"1980-04-28","ghi@gmail.com","Uttarahalli","{Home Insurance","Life Insurance","Auto Insurance}");
+insert into Customer values("admin","Samata","Modur",7,"2012-07-25","jkl@gmail.com","Uttarahalli","{Home Insurance","Life Insurance","Health Insurance}");

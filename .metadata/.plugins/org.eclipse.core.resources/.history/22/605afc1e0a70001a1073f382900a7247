@@ -1,0 +1,155 @@
+/**
+ * 
+ */
+package com.example.assignment3.cms.model;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/**
+ * @author Admin
+ *
+ */
+@Entity
+@Table
+public class PolicyDetail {
+	
+	
+	  @Id
+	  
+	  @GeneratedValue(strategy = GenerationType.AUTO)
+	private int policyId;
+	private int customerId;
+	private String policyName;
+	private String premiumFrequency;
+	private long premiumAmount;
+	private Date maturityDate;
+	private double maturityAmount;
+		  
+	  @Override
+	public String toString() {
+		return "PolicyDetail [policyId=" + policyId + ", customerId=" + customerId + ", policyName=" + policyName
+				+ ", premiumFrequency=" + premiumFrequency + ", premiumAmount=" + premiumAmount + ", maturityDate="
+				+ maturityDate + ", maturityAmount=" + maturityAmount + "]";
+	}
+	/**
+	 * @param policyId
+	 * @param customerId
+	 * @param policyName
+	 * @param premiumFrequency
+	 * @param premiumAmount
+	 * @param maturityDate
+	 * @param maturityAmount
+	 */
+	public PolicyDetail(int policyId, int customerId, String policyName, String premiumFrequency, long premiumAmount,
+			Date maturityDate, double maturityAmount) {
+		this.policyId = policyId;
+		this.customerId = customerId;
+		this.policyName = policyName;
+		this.premiumFrequency = premiumFrequency;
+		this.premiumAmount = premiumAmount;
+		this.maturityDate = maturityDate;
+		this.maturityAmount = maturityAmount;
+	}
+	/**
+	 * 
+	 */
+	public PolicyDetail() {
+		// TODO Auto-generated constructor stub
+	}
+	/**
+	 * @return the policyId
+	 */
+	public int getPolicyId() {
+		return policyId;
+	}
+	/**
+	 * @param policyId the policyId to set
+	 */
+	public void setPolicyId(int policyId) {
+		this.policyId = policyId;
+	}
+	/**
+	 * @return the customerId
+	 */
+	public int getCustomerId() {
+		return customerId;
+	}
+	/**
+	 * @param customerId the customerId to set
+	 */
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+	/**
+	 * @return the policyName
+	 */
+	public String getPolicyName() {
+		return policyName;
+	}
+	/**
+	 * @param policyName the policyName to set
+	 */
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+	}
+	/**
+	 * @return the premiumFrequency
+	 */
+	public String getPremiumFrequency() {
+		return premiumFrequency;
+	}
+	/**
+	 * @param premiumFrequency the premiumFrequency to set
+	 */
+	public void setPremiumFrequency(String premiumFrequency) {
+		this.premiumFrequency = premiumFrequency;
+	}
+	/**
+	 * @return the premiumAmount
+	 */
+	public long getPremiumAmount() {
+		return premiumAmount;
+	}
+	/**
+	 * @param premiumAmount the premiumAmount to set
+	 */
+	public void setPremiumAmount(long premiumAmount) {
+		this.premiumAmount = premiumAmount;
+	}
+	/**
+	 * @return the maturityDate
+	 */
+	public Date getMaturityDate() {
+		return maturityDate;
+	}
+	/**
+	 * @param maturityDate the maturityDate to set
+	 */
+	public void setMaturityDate(Date maturityDate) {
+		this.maturityDate = maturityDate;
+	}
+	/**
+	 * @return the maturityAmount
+	 */
+	public double getMaturityAmount() {
+		return maturityAmount;
+	}
+	/**
+	 * @param maturityAmount the maturityAmount to set
+	 */
+	public void setMaturityAmount(double maturityAmount) {
+		this.maturityAmount = maturityAmount;
+	}
+
+	  
+	  
+	  
+	 
+	
+}

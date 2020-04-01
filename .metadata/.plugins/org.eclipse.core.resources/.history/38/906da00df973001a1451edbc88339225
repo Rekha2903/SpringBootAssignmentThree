@@ -1,0 +1,57 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/testdb
+    username: admin
+    password: admin
+    tomcat:
+      max-wait: 20000
+      max-active: 50
+      max-idle: 20
+      min-idle: 15
+  profiles:
+    active: spring.profiles.active
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        id:
+          new_generator_mappings: false
+        format_sql: true
+  application:
+    name: {Insurance-Agent-Service}
+server:
+  port: 8080
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+eureka:         
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+management:
+  security:
+    enabled: false  
+ribbon:
+  https:
+    client: 
+      enabled: true    
+#logging:
+  #level:
+    #com.self.sprintboot.learning.employee: DEBUG
+

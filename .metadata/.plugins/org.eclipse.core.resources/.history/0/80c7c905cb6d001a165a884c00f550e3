@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.example.assignment3.cms.model;
+
+/**
+ * @author Admin
+ *
+ */
+public class PolicyDetail {
+
+}

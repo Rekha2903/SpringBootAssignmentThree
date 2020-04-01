@@ -1,0 +1,9 @@
+insert into customer (customer_id,
+        address,
+        age,
+        dob,
+        email,
+        first_name,
+        last_name,
+        user_name
+    ) values (null,"Uttarahalli",34,"1985-03-29","rekhabalakrishna@gmail.com","Rekha","Balakrishna","admin");

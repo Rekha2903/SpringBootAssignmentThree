@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package com.example.assignment3.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.example.assignment3.model.User;
+import com.example.assignment3.service.InsuranceAgentService;
+
+/**
+ * @author Admin
+ *
+ */
+@RestController
+public class LoginController {
+	
+	@Autowired
+	private InsuranceAgentService service;
+
+	@Autowired
+	RestTemplate restTemplate;
+
+	@PostMapping("/submit")
+	public String validateUser(@ModelAttribute(name = "user") User user, Model model) {
+		User usr = (User) model.getAttribute("user");
+		if (usr.getUsername().equals("admin") && usr.getPassword().equals("password")) {
+			populateCustomerDetails(usr);
+			return "successful-login";
+		} else
+			return "error";
+	}
+
+	private void populateCustomerDetails(User user) {
+		user.setCustomerList(service.getAllCustomers(user.getUsername()));
+	}
+
+	@GetMapping("/home/policyDetails")
+	private String getPolicyDetails(String customerId) {
+		System.out.println("Getting Policy details for customer " + customerId);
+		String response = restTemplate.exchange("http://customerManagementSystem/findPolicyDetails/{customerId}",
+				HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
+				}, customerId).getBody();
+		return "Customer Id -  " + customerId + " [ Policy Details " + response + " ]";
+	}
+
+	@Bean
+	@LoadBalanced
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+
+}

@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package com.example.assignment3.cms.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * @author Admin
+ *
+ */
+@Entity
+@Table
+public class PolicyDetail {
+
+}

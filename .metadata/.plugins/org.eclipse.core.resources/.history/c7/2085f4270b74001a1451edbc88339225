@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.example.assignment3.model;
+
+import java.sql.Date;
+
+/**
+ * @author Admin
+ *
+ */
+public class Policy {
+	
+	private String policyName;
+	private int policyId;
+	private int customerId;
+	private String premiumFrequency;
+	private long premiumAmount;
+	private Date maturityDate;
+	private double maturityAmount;
+
+	/**
+	 * Default Constructor
+	 */
+	public Policy() {
+		}
+
+	/**
+	 * @param policyName the policyName to set
+	 */
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+	}
+	
+	/**
+	 * @return the policyName
+	 */
+	public String getPolicyName() {
+		return policyName;
+	}
+
+}

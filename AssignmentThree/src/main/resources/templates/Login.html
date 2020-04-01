@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	>
+<title>Login Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style type="text/css" >
+body {
+  background-color: #fefbd8;
+}
+</style>
+</head>
+<body>
+ <form action="/submit" th:object="${user}" method="POST">	
+	<h1 align="center" style = "padding-top: 20px ; padding-bottom: 20px"><i>Safeguard Insurance</i></h1>
+	
+	<table align="center" >
+	<tr>
+	<td><strong>User name:</strong></td>
+	<td></td>
+	<td></td>
+	 <td><input type="text" id="username" name = "username"  th:field = "*{username}" /></td></tr>
+	<tr>
+	<td><strong>Password: </strong></td>
+	<td></td>
+	<td></td>
+    <td><input type="password" id="password" name = "password"  th:field = "*{password}" /></td>
+	</tr>
+	<tr><tr>
+	</table>
+	<div class="empty" style="padding-top: 20px ; padding-bottom: 20px"></div>
+	<div class="submit" align="center"><input type="submit"></div>
+	</form>
+	</body>
+</html>

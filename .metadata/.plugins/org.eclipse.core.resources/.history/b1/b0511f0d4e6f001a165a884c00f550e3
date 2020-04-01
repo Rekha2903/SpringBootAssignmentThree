@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package com.example.assignment3.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.assignment3.model.User;
+import com.example.assignment3.service.InsuranceAgentService;
+
+/**
+ * @author Admin
+ *
+ */
+@Controller
+public class LoginController {
+	
+	@Autowired
+	private InsuranceAgentService service;
+	
+	@PostMapping("/submit")
+	public String validateUser(@ModelAttribute(name = "user") User user, Model model) {
+		User usr = (User) model.getAttribute("user");
+		if (usr.getUsername().equals("admin") && usr.getPassword().equals("password")) {
+			populateCustomerDetails(usr);
+			return "successful-login";
+		} else
+			return "error";
+	}
+
+	
+	  private void populateCustomerDetails(User user) {
+		  user.setCustomerList(service.getAllCustomers(user.getUsername())); }
+	  
+	  @PostMapping("/policyDetails")
+	  private void getPolicyDetails(String customerId) {
+		  
+	  }
+	 
+}

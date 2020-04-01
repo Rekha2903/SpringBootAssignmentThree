@@ -1,0 +1,73 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style type="text/css" >
+body {
+  background-color: #fefbd8;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+.clickable { 
+            height: 50px; 
+            background: white; 
+        } 
+ .clickable:hover { 
+            background: olive; 
+        } 
+</style>
+</head>
+<body>
+	<form action="/home" th:object="${user}" method="GET"></form>
+	
+		<h1 align="center" style = "padding-top: 20px ; padding-bottom: 20px"><i>Safeguard Insurance</i></h1>
+		<h2 align="center">Welcome <td th:text = "${user.username}"></th:text>!!!</td></h2>
+		<h2 align="center">Customers</h2>
+		<table align="center">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Age</th>
+			<th>Date Of Birth</th>
+			<th>Email</th>
+			<th>Address</th>
+		</tr>
+		<tr class="clickable text-center" onclick= "window.location='/home/policyDetails/${cust.customerId}'" th:each="cust : ${user.customerList}" >
+			<td id="tableData" th:text="${cust.firstName}"></td>
+			<td id="tableData" th:text="${cust.lastName}"></td>
+			<td id="tableData" th:text="${cust.age}"></td>
+			<td id="tableData" th:text="${cust.dob}"></td>
+			<td id="tableData" th:text="${cust.email}"></td>
+			<td id="tableData" th:text="${cust.address}"></td>
+			 <td id="tableData" th:hidden="${cust.customerId}"></td>
+			
+		</tr>
+	</table>
+		
+	
+	</body>
+</html>
